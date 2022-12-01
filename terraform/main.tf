@@ -26,7 +26,7 @@ resource "aws_instance" "server" {
         private_key = var.private_key
         timeout = "4m"
     }
-    tags {
+    tags = {
         name = "DeployVM"
     }
 }
