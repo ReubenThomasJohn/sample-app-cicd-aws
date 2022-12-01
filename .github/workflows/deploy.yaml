@@ -23,8 +23,8 @@ jobs:
         with:
           terraform_wrapper: false
       - name: Terraform init
-        id: init
-        run: terraform init -backend-config="bucket=$TF_STATE_BUCKET_NAME" -backend-config="region=us-east-1"
+        id: init # actions does not seem to be recognizing the change in the below line
+        run: terraform init -backend-config="bucket=$TF_STATE_BUCKET_NAME" -backend-config="region=us-east-1" 
         working-directory: ./terraform
       - name: Terraform plan
         id: plan
